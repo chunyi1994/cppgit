@@ -23,9 +23,9 @@ public:
 
     bool operator==(const Error& e) const;
 
-    static const int ok = 0;
-    static const int other = -1;
-    static const int eof = -2;
+    static constexpr int ok = 0;
+    static constexpr int other = -1;
+    static constexpr int eof = -2;
 
 public:
     static Error Success();
