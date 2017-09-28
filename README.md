@@ -1,4 +1,4 @@
-# cppgit
+# CppGit
 
 目前在一家技术氛围非常好的公司打杂，在使用 Golang 开发和 Git 有关的程序。
 
