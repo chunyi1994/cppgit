@@ -92,7 +92,7 @@ inline void Error::SetMessage(std::string msg) {
 }
 
 inline std::string Error::String() const {
-
+    return "";
 }
 
 } // namespace

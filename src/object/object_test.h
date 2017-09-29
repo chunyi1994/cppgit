@@ -15,8 +15,6 @@ void test_object() {
     cout << "true" << endl;
 }
 
-
-
 }
 
 #endif // OBJECT_TEST_H

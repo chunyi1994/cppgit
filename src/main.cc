@@ -1,22 +1,28 @@
 #include <iostream>
 #include <ctime>
-#include "object/commit.h"
+#include <vector>
+#include "utils/buffer.h"
+#include "object/zlibs.h"
 using namespace std;
 using namespace git;
 int main(void)
 {
-    Commit commit{};
-    commit.SetMessage("update readme.md");
-    commit.AddParent(Hash{"f4a0a3c982fe9accc2423a631359a4cb8f67efcb"});
-    auto now = Time::Now();
-    commit.SetAuthor(Signature{"chunyi", "704613309@qq.com", now});
-    commit.SetCommitter(Signature{"chunyi", "704613309@qq.com", now});
-    commit.SetTree(Hash{"2ba1c1f3d023c01ee60abad056c1f72ec905235a"});
-    commit.ComputeHash();
 
-    cout << commit.String() << endl;
+    const unsigned char data[5] = {'h','e','l','l','o'};
+    ZlibCompressor z{data, 5};
 
-    cout << commit.Hash().Hex() << endl;
+    std::vector<unsigned char> buffer(100, 'a');
+    int n;
+    n = z.Read(buffer.data(), 100);
+    cout << n << endl;
+
+
+
+
+    for (int i = 0; i < 30; i++) {
+        cout <<(int) (unsigned char)buffer[i] << " " ;
+    }
+
     return 0;
 }
 

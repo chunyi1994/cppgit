@@ -45,9 +45,6 @@ inline bool Time::IsZero() const {
 inline Time Time::Now() {
     struct timeval tv;
     struct timezone tz;
-
-    struct timeval ts;
-    int i = 0;
     gettimeofday(&tv, &tz);
     return Time{tv.tv_sec + kUNIX_TO_INTERNAL};
 }
