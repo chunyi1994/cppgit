@@ -1,5 +1,7 @@
 #include "hash.h"
 
+#include "../utils/strings.h"
+
 namespace git {
 
 Hash::Hash():hash_(ZERO_HASH) {
@@ -23,7 +25,7 @@ const std::string &Hash::Hex() const {
 }
 
 const std::string &Hash::Digit() const {
-    return hash_;
+    return HexToDigital(hash_);
 }
 
 } //namespace

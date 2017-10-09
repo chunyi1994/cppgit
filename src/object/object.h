@@ -26,6 +26,7 @@ public:
 public:
     static Error Sha1Hash(const std::string& src, std::string* dest);
     static std::string TypeString(enum Type t);
+
 private:
     enum Type type_;
     std::string content_;
