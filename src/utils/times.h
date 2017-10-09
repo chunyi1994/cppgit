@@ -24,7 +24,7 @@ private:
     int64_t sec_;
 };
 
-inline Time::Time(int64_t timestamp):sec_(timestamp)
+inline Time::Time(int64_t timestamp):sec_(timestamp+kINTERNAL_TO_UNIX)
 {
 
 }
