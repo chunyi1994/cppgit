@@ -25,6 +25,8 @@ public:
     const std::string& Name() const {return name_;}
     const std::string& Email() const {return email_;}
     const git::Time Time() const {return time_;}
+
+    static Error Parse(const std::string& raw, Signature *s);
 private:
     std::string name_;
     std::string email_;
@@ -51,19 +53,16 @@ public:
     void SetHash(git::Hash hash);
     Error ComputeHash();
 
-
     const git::Hash& Hash() const;
     const git::Hash& Tree() const;
     const Signature& Author() const;
     const Signature& Committer() const;
     const std::string& Message() const;
+    const std::vector<git::Hash>& Parents() const;
+
+    static Error Parse(const std::string& raw, Commit* commit);
 
 public:
-    static std::pair<Commit::Opt, Error>
-    New(const char *content, std::size_t len);
-
-    static std::pair<Commit::Opt, Error>
-    New(const std::string& content);
 
 private:
     git::Hash hash_;

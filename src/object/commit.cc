@@ -1,5 +1,13 @@
 #include "commit.h"
 
+#include <sstream>
+#include <string>
+#include <vector>
+#include <experimental/string_view>
+#include <iostream>
+
+#include "../utils/strings.h"
+
 namespace git {
 
 Commit::Commit():
@@ -65,6 +73,45 @@ const std::string &Commit::Message() const {
     return msg_;
 }
 
+const std::vector<Hash> &Commit::Parents() const {
+    return parents_;
+}
+
+Error Commit::Parse(const std::string &raw, Commit *commit) {
+    std::stringstream ss(raw);
+    std::string line;
+    while (std::getline(ss, line)) {
+        if (HasPrefix(line, "author")) {
+            Signature s;
+            if (auto err = Signature::Parse(line, &s); !err.Ok()) {
+                return err;
+            }
+            commit->author_ = s;
+        } else if (HasPrefix(line, "committer")) {
+            Signature s;
+            if (auto err = Signature::Parse(line, &s); !err.Ok()) {
+                return err;
+            }
+            commit->committer_ = s;
+        } else if (HasPrefix(line, "parent")) {
+            commit->AddParent(git::Hash{line.substr(sizeof("parent"), 40)});
+        } else if (HasPrefix(line, "tree")) {
+            commit->SetTree(git::Hash{line.substr(sizeof("tree"), 40)});
+        } else if (line == "") {
+            break;
+        } else {
+            return Error{"Commit::Parse: unexpected content"};
+        }
+    }
+    commit->SetMessage(ss.str());
+    std::string hash;
+    if (Error err = Object::Sha1Hash(raw, &hash); !err.Ok()) {
+        return err;
+    }
+    commit->SetHash(git::Hash{hash});
+    return  Error::Success();
+}
+
 std::string Commit::String() const {
     std::stringstream ss;
 
@@ -86,6 +133,36 @@ std::string Commit::String() const {
     ss << msg_;
 
     return ss.str();
+}
+
+// `committer chunchun g <chfun@gmaillll.com> 1503980267
+Error Signature::Parse(const std::string &raw, Signature *s) {
+    assert(s != nullptr);
+    StringView type;
+    if (HasPrefix(raw, "author")) {
+        type = SubView(raw, 0, sizeof("author")-1);
+    } else if (HasPrefix(raw, "committer")) {
+        type = SubView(raw, 0, sizeof("committer")-1);
+    }
+    std::size_t left = raw.find('<');
+    if (left == std::string::npos) {
+        return Error{"Signature::Parse: bad content"};
+    }
+    std::size_t right = raw.find('>', left);
+    if (right == std::string::npos) {
+        return Error{"Signature::Parse: bad content"};
+    }
+    s->email_ = raw.substr(left + 1, right - left - 1);
+    s->name_ = raw.substr(type.length()+1, left - type.length() - 2);
+
+    left = right + 2;
+    right = raw.find(" ", left);
+    if (right == std::string::npos) {
+        return Error{"Signature::Parse: bad content"};
+    }
+    int64_t unix = std::stoll(raw.substr(left, right - left));
+    s->time_ = git::Time{unix};
+    return Error::Success();
 }
 
 
