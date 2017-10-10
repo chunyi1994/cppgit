@@ -11,6 +11,8 @@ public:
     explicit Hash(std::string hash);
     Hash(const char* hash, std::size_t len);
 
+    void Set(std::string hash) { hash_ = hash; }
+
     const std::string& Hex() const;
     const std::string& Digit() const;
 private:
