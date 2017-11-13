@@ -3,27 +3,21 @@
 #include <vector>
 #include "utils/buffer.h"
 #include "object/zlibs.h"
+#include "object/tree.h"
+#include "object/tree_test.h"
+#include "object/commit_test.h"
+#include "utils/strings.h"
+#include <memory>
 using namespace std;
 using namespace git;
 int main(void)
 {
-
-    const unsigned char data[5] = {'h','e','l','l','o'};
-    ZlibCompressor z{data, 5};
-
-    std::vector<unsigned char> buffer(100, 'a');
-    int n;
-    n = z.Read(buffer.data(), 100);
-    cout << n << endl;
-
-
-
-
-    for (int i = 0; i < 30; i++) {
-        cout <<(int) (unsigned char)buffer[i] << " " ;
-    }
-
+    test::test_tree_string();
+    string str;
+    vector<char> vec;
+    shared_ptr<string> ptr = make_shared<string>("f");
+    cout << "str:" << sizeof(str)<<endl;
+    cout << "vec:" << sizeof(vec)<<endl;
+    cout << "ptr:" << sizeof(ptr)<<endl;
     return 0;
 }
-
-

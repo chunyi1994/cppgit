@@ -1,0 +1,114 @@
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: in '/usr/local/lib/libunwind.dylib', file too small (length=17) for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: in '/usr/local/lib/libunwind.dylib', file too small (length=17) for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /Users/gaochunyi/cpp/cppgit/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dd3e0/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_dd3e0.dir/build.make CMakeFiles/cmTC_dd3e0.dir/build
+Building C object CMakeFiles/cmTC_dd3e0.dir/testCCompiler.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_dd3e0.dir/testCCompiler.c.o   -c /Users/gaochunyi/cpp/cppgit/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_dd3e0
+/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd3e0.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_dd3e0.dir/testCCompiler.c.o  -o cmTC_dd3e0 
+ld: in '/usr/local/lib/libunwind.dylib', file too small (length=17) for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_dd3e0] Error 1
+make: *** [cmTC_dd3e0/fast] Error 2
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: in '/usr/local/lib/libunwind.dylib', file too small (length=17) for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: in '/usr/local/lib/libunwind.dylib', file too small (length=17) for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /Users/gaochunyi/cpp/cppgit/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c5f06/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_c5f06.dir/build.make CMakeFiles/cmTC_c5f06.dir/build
+Building C object CMakeFiles/cmTC_c5f06.dir/testCCompiler.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_c5f06.dir/testCCompiler.c.o   -c /Users/gaochunyi/cpp/cppgit/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_c5f06
+/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c5f06.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c5f06.dir/testCCompiler.c.o  -o cmTC_c5f06 
+ld: in '/usr/local/lib/libunwind.dylib', file too small (length=17) for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_c5f06] Error 1
+make: *** [cmTC_c5f06/fast] Error 2
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: in '/usr/local/lib/libunwind.dylib', file too small (length=17) for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: in '/usr/local/lib/libunwind.dylib', file too small (length=17) for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /Users/gaochunyi/cpp/cppgit/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ffb3d/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_ffb3d.dir/build.make CMakeFiles/cmTC_ffb3d.dir/build
+Building C object CMakeFiles/cmTC_ffb3d.dir/testCCompiler.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_ffb3d.dir/testCCompiler.c.o   -c /Users/gaochunyi/cpp/cppgit/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_ffb3d
+/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ffb3d.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_ffb3d.dir/testCCompiler.c.o  -o cmTC_ffb3d 
+ld: in '/usr/local/lib/libunwind.dylib', file too small (length=17) for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_ffb3d] Error 1
+make: *** [cmTC_ffb3d/fast] Error 2
+
+

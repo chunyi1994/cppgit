@@ -1,1 +1,10 @@
-SUBDIRS(object vendor)
+ADD_SUBDIRECTORY(errors)
+ADD_SUBDIRECTORY(object)
+ADD_SUBDIRECTORY(repository)
+ADD_SUBDIRECTORY(storer)
+ADD_SUBDIRECTORY(utils)
+ADD_SUBDIRECTORY(vendor)
+
+ADD_EXECUTABLE(main main.cc)
+
+

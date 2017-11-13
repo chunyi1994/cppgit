@@ -1,0 +1,2 @@
+SET(SRC_LIST file_storer.cc)
+ADD_EXECUTABLE(file SRC_LIST)

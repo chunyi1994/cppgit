@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(sticker_me)
+PROJECT(cppgit CXX)
 
-add_subdirectory(src)
+ADD_SUBDIRECTORY(src build)
+
+TARGET_LINK_LIBRARIES(z)
+
